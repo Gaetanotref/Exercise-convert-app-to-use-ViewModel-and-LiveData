@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.viewmodel_exercise_1.R
+import com.example.viewmodel_exercise_1.ui.main.viewModel.MainViewModel
 
 class MainFragment : Fragment() {
 

@@ -1,8 +1,8 @@
-package com.example.viewmodel_exercise_1
+package com.example.viewmodel_exercise_1.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.viewmodel_exercise_1.ui.main.MainFragment
+import com.example.viewmodel_exercise_1.R
 
 class MainActivity : AppCompatActivity() {
 
