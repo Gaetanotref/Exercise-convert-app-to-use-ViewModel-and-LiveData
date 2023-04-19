@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import com.example.viewmodel_exercise_1.R
+import kotlinx.coroutines.launch
 
 class MainFragment : Fragment() {
 
@@ -27,15 +29,20 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        viewModel.response.observe(viewLifecycleOwner) { data ->
-            val message = view?.findViewById<TextView>(R.id.message)
-            if (message != null) {
-                "This is the size of the data ${data.body()}".also { message.text = it }
-            } else {
-                Log.d("MainFragment", "ERRORE!")
+        lifecycleScope.launch {
+            viewModel.response.collect { data ->
+                val message = view?.findViewById<TextView>(R.id.message)
+                if (message != null) {
+                    "${data.body()?.get(0)?.body}".also { message.text = it }
+                } else {
+                    Log.d("MainFragment", "ERRORE!")
+                }
             }
         }
+
+
         viewModel.retriveRepos()
 
         return inflater.inflate(R.layout.fragment_main, container, false)

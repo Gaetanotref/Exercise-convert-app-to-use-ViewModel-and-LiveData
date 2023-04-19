@@ -12,5 +12,4 @@ class RetrofitCall {
             .create(InterfaceCall::class.java)
         return retrofit
     }
-
 }
