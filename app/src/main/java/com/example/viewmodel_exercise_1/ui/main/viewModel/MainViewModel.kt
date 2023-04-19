@@ -1,7 +1,9 @@
-package com.example.viewmodel_exercise_1.ui.main
+package com.example.viewmodel_exercise_1.ui.main.viewModel
 
 import android.util.Log
 import androidx.lifecycle.*
+import com.example.viewmodel_exercise_1.ui.main.DTO.MyDataItem
+import com.example.viewmodel_exercise_1.ui.main.retrofit.RetrofitCall
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow

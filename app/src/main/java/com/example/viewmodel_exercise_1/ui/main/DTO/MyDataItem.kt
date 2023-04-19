@@ -1,4 +1,4 @@
-package com.example.viewmodel_exercise_1.ui.main
+package com.example.viewmodel_exercise_1.ui.main.DTO
 
 
 data class MyDataItem(
