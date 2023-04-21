@@ -11,5 +11,4 @@ class RetrofitCall {
            .build()
            .create(InterfaceCall::class.java)
     }
-
 }
