@@ -33,7 +33,6 @@ class MainViewModel(val myDao: MyInterfaceDao) : ViewModel() {
 
     fun retriveRepos() {
         viewModelScope.launch {
-
             try {
                 val resultFromNetwork = retrofitCall.getData()
                 myDao.insertAll(*resultFromNetwork.map { repo -> repo.toEntity() }.toTypedArray())
